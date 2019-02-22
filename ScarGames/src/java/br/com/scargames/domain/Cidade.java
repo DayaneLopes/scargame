@@ -15,27 +15,30 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="bandeira")
-public class Bandeira implements Serializable{
+@Table(name="cidade")
+public class Cidade {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     
-    @OneToMany(mappedBy ="id")
-    private List<Cartao> cartoes;
+    @NotNull
+    @Column(name="nome")
+    @Size(min=100, max=100)
+    private String nome;
     
     @NotNull
-    @Column(name="descricao")
-    @Size(min=1, max=45)
-    private String descricao;
+    @Column(name="estado")
+    @Size(min=2, max=2)
+    private String estado;
 
-    public Bandeira() {
+    public Cidade() {
     }
 
-    public Bandeira(Integer id, String descricao) {
+    public Cidade(Integer id, String nome, String estado) {
         this.id = id;
-        this.descricao = descricao;
+        this.nome = nome;
+        this.estado = estado;
     }
 
     public Integer getId() {
@@ -46,26 +49,25 @@ public class Bandeira implements Serializable{
         this.id = id;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public List<Cartao> getCartoes() {
-        return cartoes;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setCartoes(List<Cartao> cartoes) {
-        this.cartoes = cartoes;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
-    
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 5;
         hash = 97 * hash + Objects.hashCode(this.id);
         return hash;
     }
@@ -81,12 +83,13 @@ public class Bandeira implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Bandeira other = (Bandeira) obj;
+        final Cidade other = (Cidade) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
+    
     
     
 }
