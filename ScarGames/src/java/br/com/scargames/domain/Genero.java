@@ -29,7 +29,7 @@ public class Genero implements Serializable{
     private String descricao;
     
     @OneToMany(mappedBy ="id")
-    private List<Genero> generos;
+    private List<Jogo> jogos;
 
     public Genero() {
     }
@@ -55,6 +55,15 @@ public class Genero implements Serializable{
         this.descricao = descricao;
     }
 
+    public List<Jogo> getJogos() {
+        return jogos;
+    }
+
+    public void setJogos(List<Jogo> jogos) {
+        this.jogos = jogos;
+    }
+
+        
     @Override
     public int hashCode() {
         int hash = 7;

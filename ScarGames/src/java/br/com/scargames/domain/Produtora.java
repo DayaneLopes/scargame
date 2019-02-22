@@ -33,7 +33,7 @@ public class Produtora implements Serializable{
     private String nome;
     
     @OneToMany(mappedBy ="id")
-    private List<Produtora> produtoras;
+    private List<Jogo> jogos;
 
     public Produtora() {
     }
@@ -58,6 +58,16 @@ public class Produtora implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public List<Jogo> getJogos() {
+        return jogos;
+    }
+
+    public void setJogos(List<Jogo> jogos) {
+        this.jogos = jogos;
+    }
+    
+    
 
     @Override
     public int hashCode() {

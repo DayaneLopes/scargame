@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import static javax.swing.text.StyleConstants.Size;
@@ -47,12 +49,18 @@ public class Endereco implements Serializable{
     @Size(min=1, max=10)
     private String cep;
     
+    @JoinColumn(name="cidade_endereco_id", referencedColumnName ="id")
+    @ManyToOne(optional=false)
     private Cidade cidade;
+    
+    @JoinColumn(name="usuario_endereco_id", referencedColumnName ="id")
+    @ManyToOne(optional=false)
+    private Usuario usuario; 
 
     public Endereco() {
     }
 
-    public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, Cidade cidade) {
+    public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, Cidade cidade, Usuario usuario) {
         this.id = id;
         this.logradouro = logradouro;
         this.numero = numero;
@@ -60,6 +68,7 @@ public class Endereco implements Serializable{
         this.bairro = bairro;
         this.cep = cep;
         this.cidade = cidade;
+        this.usuario = usuario;
     }
 
     public Integer getId() {
@@ -117,6 +126,16 @@ public class Endereco implements Serializable{
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
+    
 
     @Override
     public int hashCode() {

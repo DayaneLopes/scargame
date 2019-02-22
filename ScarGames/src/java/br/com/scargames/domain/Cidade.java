@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="cidade")
-public class Cidade {
+public class Cidade implements Serializable{
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -31,6 +31,9 @@ public class Cidade {
     @Column(name="estado")
     @Size(min=2, max=2)
     private String estado;
+    
+    @OneToMany(mappedBy ="id")
+    private List<Endereco> enderecos;
 
     public Cidade() {
     }
@@ -65,6 +68,16 @@ public class Cidade {
         this.estado = estado;
     }
 
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
