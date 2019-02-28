@@ -1,7 +1,6 @@
 package br.com.scargames.domain;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,12 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name="jogo")
@@ -55,7 +52,10 @@ public class Jogo implements Serializable{
     @JoinColumn(name="produtora_jogo_id", referencedColumnName ="id")
     @ManyToOne(optional=false)
     private Produtora produtora;
-
+    
+    @OneToOne(mappedBy = "id")
+    private Biblioteca biblioteca;
+    
     public Jogo() {
     }
 
@@ -133,6 +133,16 @@ public class Jogo implements Serializable{
     public void setProdutora(Produtora produtora) {
         this.produtora = produtora;
     }
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
+    
+    
 
     @Override
     public int hashCode() {
