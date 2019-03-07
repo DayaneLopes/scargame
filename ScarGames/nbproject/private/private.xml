@@ -3,6 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Genero.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Biblioteca.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Cartao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/JogoDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/util/HibernateUtil.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/GeneroDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/BandeiraDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Endereco.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Jogo.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Bandeira.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/CartaoDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/EnderecoDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/UsuarioDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Usuario.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/CidadeDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Produtora.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/domain/Cidade.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/BibliotecaDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/dao/ProdutoraDao.java</file>
             <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/hibernate.cfg.xml</file>
         </group>
     </open-files>
