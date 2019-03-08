@@ -12,7 +12,7 @@ public class CartaoDao {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         try{
-            List<Cartao> lista = session.createQuery("from Cartao order by id asc").list();
+            List<Cartao> lista = session.createQuery("from Cartao order by numero asc").list();
             session.getTransaction().commit();
             return lista;
         }catch(Exception e){

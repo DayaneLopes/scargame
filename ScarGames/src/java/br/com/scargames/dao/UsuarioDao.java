@@ -26,15 +26,30 @@ public class UsuarioDao {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         try{
-            Usuario produtora = (Usuario)session.createQuery("from Usuario where id = " + id).uniqueResult();
+            Usuario usuario = (Usuario)session.createQuery("from Usuario where id = " + id).uniqueResult();
             session.getTransaction().commit();
-            return produtora;
+            return usuario;
         }catch(Exception e){
             session.getTransaction().rollback();
             e.printStackTrace();
             return null;
         }   
     }
+    
+    public Usuario consultarPorEmail(String email){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        try{
+            Usuario usuario = (Usuario)session.createQuery("from Usuario where email = '" + email + "'").uniqueResult();
+            session.getTransaction().commit();
+            return usuario;
+        }catch(Exception e){
+            session.getTransaction().rollback();
+            e.printStackTrace();
+            return null;
+        }   
+    }
+    
     
     public Boolean inserir (Usuario usuario){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();  
