@@ -23,15 +23,14 @@ public class UsuarioService {
     }
     
     public Boolean alterar(Usuario usuario){
-        usuario.setSenha(HashMaker.stringHexa(HashMaker.gerarHash(usuario.getSenha())));
-        return usuarioDao.alterar(usuario);
+       return usuarioDao.alterar(usuario);
     }
     
     public Boolean excluir(Usuario usuario){
         return usuarioDao.excluir(usuario);
     }
     
-    public Boolean altenticar(Usuario usuario){
+    public Boolean atenticar(Usuario usuario){
         Usuario usuarioBanco = usuarioDao.consultarPorEmail(usuario.getEmail());
         if (usuarioBanco == null){
             return false;
