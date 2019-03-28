@@ -2,6 +2,7 @@ package br.com.scargames.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -39,8 +40,7 @@ public class Usuario implements Serializable{
     
     @NotNull
     @Column(name="dataNascimento")
-    @Temporal(TemporalType.DATE)
-    private LocalDate dataNascimento;
+    private Date dataNascimento;
     
     @NotNull
     @Column(name="sexo")
@@ -69,14 +69,18 @@ public class Usuario implements Serializable{
     @OneToMany(mappedBy ="id")
     private List<Cartao> cartoes;
     
-    @OneToOne(mappedBy = "id")
+    @OneToOne(mappedBy = "usuario")
     private Biblioteca biblioteca;
     
 
     public Usuario(){
     }
+    public Usuario(String email, String senha){
+        this.email = email;
+        this.senha = senha;
+    }
 
-    public Usuario(Integer id, String nome, String cpf, LocalDate dataNascimento, String sexo, String telefone, String email, String senha) {
+    public Usuario(Integer id, String nome, String cpf, Date dataNascimento, String sexo, String telefone, String email, String senha) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -111,11 +115,11 @@ public class Usuario implements Serializable{
         this.cpf = cpf;
     }
 
-    public LocalDate getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

@@ -37,10 +37,11 @@ public class UsuarioDao {
     }
     
     public Usuario consultarPorEmail(String email){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         try{
             Usuario usuario = (Usuario)session.createQuery("from Usuario where email = '" + email + "'").uniqueResult();
+            System.out.println(usuario.getNome());
             session.getTransaction().commit();
             return usuario;
         }catch(Exception e){
