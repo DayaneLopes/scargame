@@ -10,11 +10,12 @@
         <p:dialog visible="true" closable="false" resizable="false" modal="true" header="   ScarGames | Autenticação" 
                   draggable="false" width="400"> 
         <h:form>
+            <p:growl id="growl" life="3000"/>
             <br/>
             <p:inputText id="email" value="#{usuarioMB.email}" placeholder="Email" style="width:95%"/><br/><br/>
             <p:password id="senha" value="#{usuarioMB.senha}" placeholder="Senha" style="width:95%"/><br/><br/>
             <div align="center">
-                <p:commandButton value="OK" action="#{usuarioMB.autenticar()}" icon="ui-icon-check"/><br/>
+                <p:commandButton value="OK" action="#{usuarioMB.autenticar()}" icon="ui-icon-check" update="growl"/><br/>
             </div>
         </h:form>
             <br/>

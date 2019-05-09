@@ -1,17 +1,12 @@
 package br.com.scargames.cotroller;
 
 import br.com.scargames.domain.Bandeira;
-import br.com.scargames.domain.Usuario;
 import br.com.scargames.services.BandeiraService;
-import br.com.scargames.services.UsuarioService;
+import br.com.scargames.util.UtilMessages;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @ManagedBean(name = "bandeiraMB")
 @SessionScoped
@@ -37,18 +32,22 @@ public class BandeiraMB implements Serializable{
     public String inserir(){
         BandeiraService service = new BandeiraService();
         if(service.inserir(bandeira)){
+            UtilMessages.messageInfo("Bandeira cadastrada com sucesso!");
             this.listar();
             return "list.xhtml?faces-redirect=true";
         }else{
+            UtilMessages.messageError("Ocorreu um erro ao cadastrar a bandeira!");
             return null;
         }
     }
     public String excluir(Bandeira bandeira){
       BandeiraService service = new BandeiraService();
         if(service.excluir(bandeira)){
+             UtilMessages.messageInfo("Bandeira excluida com sucesso!");
             this.listar();
             return "list.xhtml?faces-redirect=true";
         }else{
+            UtilMessages.messageError("Ocorreu um erro ao excluir a bandeira!");
             return null;
         }
     }
@@ -61,9 +60,11 @@ public class BandeiraMB implements Serializable{
     public String alterar(){
         BandeiraService service = new BandeiraService();
         if(service.alterar(bandeira)){
+             UtilMessages.messageInfo("Bandeira alterada com sucesso!");
             this.listar();
             return "list.xhtml?faces-redirect=true";
         }else{
+            UtilMessages.messageError("Ocorreu um erro ao alterar a bandeira!");
             return null;
         }
     }

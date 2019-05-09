@@ -2,6 +2,7 @@ package br.com.scargames.cotroller;
 
 import br.com.scargames.domain.Usuario;
 import br.com.scargames.services.UsuarioService;
+import br.com.scargames.util.UtilMessages;
 import java.io.Serializable;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ManagedBean;
@@ -28,6 +29,7 @@ public class UsuarioMB implements Serializable{
         if(service.atenticar(usuario)){
             return "/private/index.xhtmll?faces-redirect=true";
         }else{
+            UtilMessages.messageError("Dados inválidos!");
             return null; 
         }
     }
