@@ -23,7 +23,6 @@ public class Cidade implements Serializable{
     
     @NotNull
     @Column(name="nome")
-    @Size(min=100, max=100)
     private String nome;
     
     @NotNull
