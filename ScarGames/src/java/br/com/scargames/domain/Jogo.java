@@ -28,21 +28,25 @@ public class Jogo implements Serializable{
     private String titulo;
     
     @NotNull
-    @Column(name="classificacao")
+    @Column(name="classificacao")//oneMenu
     private Integer classificacao;
     
     @NotNull
-    @Column(name="sinopse")
+    @Column(name="sinopse")//text area
     @Size(min=1, max=1000)
     private String sinopse;
     
     @NotNull
-    @Column(name="requisitos")
+    @Column(name="preco")
+    private Double preco;
+    
+    @NotNull
+    @Column(name="requisitos")//input
     @Size(min=1, max=200)
     private String requisitos;
     
     @NotNull
-    @Column(name="nota")
+    @Column(name="nota")//input
     private Double nota;
     
     @JoinColumn(name="genero", referencedColumnName ="id")
@@ -69,6 +73,16 @@ public class Jogo implements Serializable{
         this.genero = genero;
         this.produtora = produtora;
     }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+    
+    
 
     public Integer getId() {
         return id;

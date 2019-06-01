@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/cotroller/CidadeMB.java</file>
-            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/web/private/cidade/alter.xhtml</file>
-            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/web/private/cidade/new.xhtml</file>
-            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/web/private/cidade/list.xhtml</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/web/private/templates/menu.xhtml</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/web/private/index.xhtml</file>
+            <file>file:/C:/Users/Windows/Desktop/ScarGAME/ScarGames/src/java/br/com/scargames/util/ImagesView.java</file>
         </group>
     </open-files>
 </project-private>

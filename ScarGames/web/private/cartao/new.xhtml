@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <ui:composition template="../templates/template.xhtml">
+        <ui:define name="titleWindow">ScarGames - Cartão</ui:define>
+        <ui:define name="content">
+            <div class="ui-g">
+                <div class="ui-g-1"></div>
+                <div class="ui-g-10">
+                    <h1>Cadastro de Cartões</h1>
+                </div>
+                
+                 <div class="ui-g-1"></div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-3">
+                    <p:inputMask id="numero" placeholder="Numero"
+                                 value="#{cartaoMB.cartao.numero}"
+                                     style="width: 100%;" mask="9999.9999.9999.9999"/>
+                </div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-5">
+                    <p:calendar id="vencimento" value="#{cartaoMB.cartao.vencimento}" placeholder="Vencimento" pattern="dd/MM/yyyy" mindate="today" />
+                </div>
+                <div class="ui-g-1"></div>
+                
+                 <div class="ui-g-1"></div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-3">
+                    <p:selectOneMenu  value="#{cartaoMB.cartao.bandeira}" converter="entityConverter" style="width:300px"
+                                     placeholder="Bandeira" >
+                        <f:selectItems value="#{bandeiraMB.bandeiras}"  var="bandeira" itemLabel="#{bandeira.descricao}" itemValue="#{genero}" />
+                    </p:selectOneMenu>
+                </div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-5">
+                    <p:selectOneMenu  value="#{cartaoMB.cartao.usuario}" converter="entityConverter" style="width:300px"
+                                     placeholder="Usuario" >
+                        <f:selectItems value="#{usuarioMB.usuarios}" var="usuario" itemLabel="#{usuario.nome}" itemValue="#{produtora}" />
+                    </p:selectOneMenu>
+                </div>
+                <div class="ui-g-1"></div>
+                
+            </div>
+            <div align="center" style="margin-top: 20px;">
+                <p:commandButton value="Salvar" icon="ui-icon-check"  
+                                 action="#{cartaoMB.inserir()}"
+                                 style="width: 150px; margin-right: 20px;"
+                                 update="growl"/>
+                <p:commandButton value="Cancelar" icon="ui-icon-close" 
+                                 action="#{cartaoMB.cancelar()}" 
+                                 immediate="true" style="width: 150px;"/>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
+

@@ -9,6 +9,13 @@
         <ui:define name="titleWindow">ScarGames</ui:define>
         <ui:define name="content">
             
+            <div>
+                <p:galleria  style="text-align: center"  value="#{imagesView.images}" var="image" panelWidth="1400" panelHeight="350" showCaption="true" >
+                    <p:graphicImage url="/resources/imagensJogos/#{image}"  title="#{image}" />
+                </p:galleria >
+            </div>
+            
+           
         </ui:define>
     </ui:composition>                   
                     
