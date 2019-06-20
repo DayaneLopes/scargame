@@ -1,7 +1,6 @@
 package br.com.scargames.domain;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -13,8 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
@@ -35,7 +32,7 @@ public class Usuario implements Serializable{
     
     @NotNull
     @Column(name="cpf")
-    @Size(min=11, max=11)
+    @Size(min=14, max=14)
     private String cpf;
     
     @NotNull
